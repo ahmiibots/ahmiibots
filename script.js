@@ -575,7 +575,7 @@
     if (window.matchMedia('(pointer: coarse)').matches) return; // Skip touch/mobile for battery & smoothness
 
     const tiltCards = document.querySelectorAll(
-      '.satisfaction-card, .project-card .mockup-frame, .testimonial-card, .contact-card-item, .contact-form-card'
+      '.satisfaction-card, .project-card .mockup-frame, .testimonial-card, .contact-card-item:not(.contact-card-link), .contact-form-card'
     );
 
     tiltCards.forEach(card => {
@@ -605,16 +605,155 @@
     });
   }
 
+  // ==========================================================================
+  // Contact Form AJAX Submission with Glassmorphism Toast Notification
+  // ==========================================================================
+  function initContactForm() {
+    const form = document.getElementById('contact-form');
+    const toast = document.getElementById('glass-toast');
+    if (!form) return;
+
+    let toastTimer = null;
+
+    function showGlassToast() {
+      if (!toast) return;
+
+      // Clear any pending dismissal timer
+      if (toastTimer) {
+        clearTimeout(toastTimer);
+        toastTimer = null;
+      }
+
+      // Smooth slide-in
+      toast.classList.add('toast-visible');
+
+      // Keep visible for exactly 5 seconds, then slide/fade out
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('toast-visible');
+        toastTimer = null;
+      }, 5000);
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('.btn-submit');
+      const originalHtml = submitBtn ? submitBtn.innerHTML : '';
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.75';
+        const spanText = submitBtn.querySelector('span');
+        if (spanText) spanText.textContent = 'Sending Proposal...';
+      }
+
+      const formData = new FormData(form);
+      const urlEncoded = new URLSearchParams(formData).toString();
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: urlEncoded,
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          form.reset();
+          showGlassToast();
+        } else {
+          // Fallback direct submission if fetch was blocked
+          form.submit();
+        }
+      } catch (err) {
+        // Fallback: standard submission if fetch blocked by CORS
+        form.submit();
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '1';
+          submitBtn.innerHTML = originalHtml;
+        }
+      }
+    });
+  }
+
+  // ==========================================================================
+  // Smart WhatsApp Deep-Link (Opens App First, Web as Fallback)
+  // ==========================================================================
+  function initWhatsAppLink() {
+    const waLink = document.getElementById('whatsapp-link');
+    if (!waLink) return;
+
+    waLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const phone = '923412770755';
+      const appUri = `whatsapp://send?phone=${phone}`;
+      const webUri = `https://api.whatsapp.com/send/?phone=${phone}&type=phone_number&app_absent=0`;
+
+      // Try opening the native WhatsApp application protocol
+      const now = Date.now();
+      window.location.href = appUri;
+
+      // If user is on a desktop or phone without the app installed, fallback after a moment
+      setTimeout(() => {
+        if (Date.now() - now < 1500) {
+          window.open(webUri, '_blank', 'noopener,noreferrer');
+        }
+      }, 700);
+    });
+  }
+
+  // ==========================================================================
+  // Direct Email Fallback Handler (Guarantees Mail App or Webmail Opens Instantly)
+  // ==========================================================================
+  function initDirectEmail() {
+    const emailLink = document.getElementById('direct-email-link');
+    if (!emailLink) return;
+
+    function openEmail(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+
+      const email = 'business.ahmiibots@gmail.com';
+      const mailtoUrl = `mailto:${email}`;
+      const webmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+
+      // 1. Instantly trigger default mail client via an invisible link click
+      const hiddenLink = document.createElement('a');
+      hiddenLink.href = mailtoUrl;
+      hiddenLink.style.display = 'none';
+      document.body.appendChild(hiddenLink);
+      hiddenLink.click();
+      setTimeout(() => hiddenLink.remove(), 100);
+
+      // 2. Immediate direct webmail fallback for Windows/browsers without local mail app
+      window.open(webmailUrl, '_blank', 'noopener,noreferrer');
+    }
+
+    emailLink.addEventListener('click', openEmail);
+    emailLink.addEventListener('touchend', openEmail, { passive: false });
+  }
+
   // Initialize once DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       initScrollReveals();
       initSmoothAnchorScroll();
       init3DCardTilt();
+      initContactForm();
+      initWhatsAppLink();
+      initDirectEmail();
     });
   } else {
     initScrollReveals();
     initSmoothAnchorScroll();
     init3DCardTilt();
+    initContactForm();
+    initWhatsAppLink();
+    initDirectEmail();
   }
 })();

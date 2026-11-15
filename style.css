@@ -288,9 +288,9 @@ a, label, input, textarea, button,
 .hero-section {
   position: relative;
   min-height: 85vh;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 1.5rem 1.5rem 4rem;
+  width: 100%;
+  margin: 0;
+  padding: 1.5rem 0 4rem 3cm;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -299,6 +299,8 @@ a, label, input, textarea, button,
 .hero-name-container {
   text-align: left;
   margin-top: 1rem;
+  margin-left: 0;
+  padding-left: 0;
   position: relative;
   z-index: 5;
 }
@@ -311,6 +313,8 @@ a, label, input, textarea, button,
   font-weight: 500;
   color: var(--primary);
   margin-bottom: 0.25rem;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .dot-orange {
@@ -332,10 +336,14 @@ a, label, input, textarea, button,
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin: 0;
+  padding: 0;
 }
 
 .name-line {
   display: block;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .line-first,
@@ -353,10 +361,19 @@ a, label, input, textarea, button,
   position: relative;
   z-index: 10;
   margin-top: 8rem;
+  margin-left: 0;
+  padding-left: 0;
+  width: 100%;
 }
 
 .hero-left {
   max-width: 420px;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.hero-right {
+  margin-right: 4.5cm;
 }
 
 .badge-trusted {
@@ -1692,10 +1709,16 @@ a, label, input, textarea, button,
   border: 1px solid var(--border-subtle);
   border-radius: 18px;
   backdrop-filter: blur(20px);
+  text-decoration: none;
+  cursor: default;
   will-change: transform, border-color, box-shadow;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
               border-color 0.3s ease, 
               box-shadow 0.3s ease;
+}
+
+.contact-card-link {
+  cursor: pointer;
 }
 
 .contact-card-item:hover {
@@ -1948,6 +1971,12 @@ a, label, input, textarea, button,
 
   .hero-section {
     padding-top: 1.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .hero-right {
+    margin-right: 0;
   }
 
   .brands-row {
@@ -2132,4 +2161,97 @@ a, button, .btn, .nav-link, .pill-tag {
 .parallax-layer {
   will-change: transform;
   transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   Dark Glassmorphism Toast Notification
+   ========================================================================== */
+.glass-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 420px;
+  padding: 1rem 1.4rem;
+  background: rgba(18, 14, 12, 0.85);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 94, 54, 0.45);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85),
+              0 0 30px rgba(255, 94, 54, 0.25),
+              inset 0 1px 1.5px rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(120%) scale(0.96);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.4s ease;
+}
+
+.glass-toast.toast-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0) scale(1);
+}
+
+.toast-icon-wrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 94, 54, 0.15);
+  border: 1px solid rgba(255, 94, 54, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 16px rgba(255, 94, 54, 0.4);
+}
+
+.toast-icon-wrap svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--primary);
+  filter: drop-shadow(0 0 6px var(--primary));
+}
+
+.toast-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.toast-headline {
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+.toast-subtext {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .glass-toast {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1.5rem;
+    max-width: none;
+    transform: translateY(140%) scale(0.96);
+  }
+
+  .glass-toast.toast-visible {
+    transform: translateY(0) scale(1);
+  }
 }
