@@ -1,0 +1,10 @@
+mingit/
+mingit/**
+*.zip
+crash.txt
+err.txt
+out.txt
+server_status.txt
+run_server.ps1
+server.ps1
+start_server.bat

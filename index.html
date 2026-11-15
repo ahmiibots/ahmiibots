@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUHAMMAD AHMAD — Personal Portfolio Website</title>
+  <!-- Google Fonts: Bebas Neue, Oswald, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Thin Glowing Red Scroll-Progress Bar -->
+  <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+
+  <!-- Fixed Background Canvas for Smooth Scroll Frame Animation -->
+  <canvas id="canvas"></canvas>
+
+  <!-- Ambient Cinematic Glow Overlays -->
+  <div class="ambient-glow glow-top"></div>
+  <div class="ambient-glow glow-center"></div>
+
+  <!-- Main Content Wrapper (Over Canvas) -->
+  <div class="content-wrapper">
+
+    <!-- Navigation Header -->
+    <header class="navbar-container" id="navbar-container">
+      <nav class="navbar">
+        <a href="#" class="logo">AHMII BOTS</a>
+
+        <div class="nav-pill">
+          <a href="#about" class="nav-link active">About</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#testimonials" class="nav-link">Why Me</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <a href="#contact" class="btn btn-primary btn-nav">
+          <span>Start a Project</span>
+          <span class="btn-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </span>
+        </a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <!-- Left-Aligned Hero Typographic Name -->
+      <div class="hero-name-container">
+        <span class="greeting-tag"><span class="dot-orange"></span>Hi, I am</span>
+        <h1 class="hero-name">
+          <span class="name-line line-first">MUHAMMAD</span>
+          <span class="name-line line-second">AHMAD</span>
+        </h1>
+      </div>
+
+      <!-- Hero Floating Content Layer -->
+      <div class="hero-content-grid">
+        <!-- Left Hero Card / CTA Block -->
+        <div class="hero-left">
+          <div class="badge-trusted">
+            <span class="dot-orange"></span>
+            <span>AI agents and Automation Specialist</span>
+          </div>
+          <h2 class="hero-headline">We build AI agents that work While you sleep</h2>
+          <p class="hero-desc">we help businesses save time reduce repetitive work and Improve efficiency with intelligent AI agents and custom automation solutions</p>
+          <div class="hero-ctas">
+            <a href="#contact" class="btn btn-primary">
+              <span>Start a Project</span>
+              <span class="btn-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </span>
+            </a>
+            <a href="#projects" class="btn btn-secondary">
+              <span>View My Work</span>
+              <span class="btn-icon-subtle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <line x1="7" y1="7" x2="17" y2="17"></line>
+                  <polyline points="7 17 17 17 17 7"></polyline>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Hero Floating Testimonial Card -->
+        <div class="hero-right">
+          <div class="glass-card satisfaction-card">
+            <div class="card-services-row">
+              <div class="card-service-item">
+                <div class="card-service-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                    <line x1="12" y1="19" x2="12" y2="22"></line>
+                  </svg>
+                </div>
+                <span class="card-service-label">AI voice agents</span>
+              </div>
+              <div class="card-service-item">
+                <div class="card-service-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                </div>
+                <span class="card-service-label">business solutions</span>
+              </div>
+            </div>
+            <p class="satisfaction-text">
+              <strong>Currently Looking for My First Clients</strong>
+            </p>
+            <div class="card-pills">
+              <span class="pill-tag">Free Consultation</span>
+              <span class="pill-tag">24h Response</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infinite Marquee Ticker -->
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        <div class="marquee-item">24/7 AI Voice agents <span class="star-icon">✦</span> automated workflows <span class="star-icon">✦</span> custom web and apps <span class="star-icon">✦</span> instant booking systems <span class="star-icon">✦</span> Fast 24H response <span class="star-icon">✦</span></div>
+        <div class="marquee-item" aria-hidden="true">24/7 AI Voice agents <span class="star-icon">✦</span> automated workflows <span class="star-icon">✦</span> custom web and apps <span class="star-icon">✦</span> instant booking systems <span class="star-icon">✦</span> Fast 24H response <span class="star-icon">✦</span></div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <div class="about-grid">
+        <div class="about-label">
+          <span class="dot-orange"></span>
+          <span>About Me</span>
+        </div>
+        <div class="about-content">
+          <p class="about-headline">
+            Hey, I'm Muhammad Ahmad — I build AI voice agents and business automation systems that help businesses handle customer conversations, streamline repetitive tasks, and save time. I turn manual workflows into smart, reliable systems that let businesses focus on growth.
+          </p>
+          <div class="about-ctas">
+            <a href="#contact" class="btn btn-primary">
+              <span>Start a Project</span>
+              <span class="btn-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </span>
+            </a>
+            <a href="#projects" class="btn btn-secondary">
+              <span>View My Work</span>
+              <span class="btn-icon-subtle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <line x1="7" y1="7" x2="17" y2="17"></line>
+                  <polyline points="7 17 17 17 17 7"></polyline>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partner Logos Row — Technology Stack -->
+    <section class="brands-section">
+      <div class="brands-row">
+        <!-- ElevenLabs -->
+        <div class="brand-item brand-elevenlabs">
+          <svg viewBox="0 0 145 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="brand-logo-svg" aria-label="ElevenLabs">
+            <!-- Official ElevenLabs two vertical bars logo ("11") -->
+            <rect x="2" y="6" width="4.5" height="24" rx="2.25" fill="currentColor"/>
+            <rect x="11.5" y="6" width="4.5" height="24" rx="2.25" fill="currentColor"/>
+            <text x="25" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="14.5" font-weight="700" fill="currentColor" letter-spacing="0.2">ElevenLabs</text>
+          </svg>
+        </div>
+        <!-- n8n -->
+        <div class="brand-item brand-n8n">
+          <svg viewBox="0 0 80 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="brand-logo-svg" aria-label="n8n">
+            <circle cx="10" cy="18" r="8" fill="#EA4B71"/>
+            <circle cx="40" cy="18" r="8" fill="#EA4B71"/>
+            <circle cx="70" cy="18" r="8" fill="#EA4B71"/>
+            <line x1="18" y1="18" x2="32" y2="18" stroke="#EA4B71" stroke-width="2"/>
+            <line x1="48" y1="18" x2="62" y2="18" stroke="#EA4B71" stroke-width="2"/>
+            <text x="6" y="23" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="white" letter-spacing="1">n</text>
+            <text x="36" y="23" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="white" letter-spacing="1">8</text>
+            <text x="66" y="23" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="white" letter-spacing="1">n</text>
+          </svg>
+        </div>
+        <!-- OpenAI -->
+        <div class="brand-item brand-openai">
+          <svg viewBox="0 0 120 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="brand-logo-svg" aria-label="OpenAI">
+            <!-- Official OpenAI Flower / Rosette Spiral Icon -->
+            <g transform="translate(2, 4) scale(0.88)" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+              <path d="M28.5 16.5a7 7 0 0 0-.6-5.8 7.1 7.1 0 0 0-7.3-3.4 7 7 0 0 0-4.7-2 7.1 7.1 0 0 0-6.8 5 7 7 0 0 0-4.1 3 7.1 7.1 0 0 0 .5 8 7 7 0 0 0 .6 5.8 7.1 7.1 0 0 0 7.3 3.4 7 7 0 0 0 4.7 2 7.1 7.1 0 0 0 6.8-5 7 7 0 0 0 4.1-3 7.1 7.1 0 0 0-.5-8z"/>
+              <path d="M15.5 28.5V18.2l8.8-5.1"/>
+              <path d="M7.8 24.3l8.9-5.1V8.8"/>
+              <path d="M6.3 13.9l8.9 5.2 8.9-5.2"/>
+              <path d="M22.5 7.5v10.3l-8.8 5.1"/>
+              <path d="M30.2 11.7l-8.9 5.1v10.4"/>
+              <path d="M31.7 22.1l-8.9-5.2-8.9 5.2"/>
+            </g>
+            <text x="36" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="14.5" font-weight="700" fill="currentColor" letter-spacing="0.4">OpenAI</text>
+          </svg>
+        </div>
+        <!-- Make.com -->
+        <div class="brand-item brand-make">
+          <svg viewBox="0 0 110 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="brand-logo-svg" aria-label="Make">
+            <circle cx="10" cy="18" r="6" fill="#6D00CC" opacity="0.9"/>
+            <circle cx="24" cy="18" r="6" fill="#9B2FE8" opacity="0.8"/>
+            <circle cx="38" cy="18" r="6" fill="#BD71F5" opacity="0.7"/>
+            <text x="52" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="currentColor" letter-spacing="0.5">Make</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected Work / Projects Section (Transformed to What I Can Build) -->
+    <section class="projects-section" id="projects">
+      <div class="projects-header">
+        <div class="section-tag">
+          <span class="dot-orange"></span>
+          <span>WHAT I CAN BUILD</span>
+        </div>
+        <h2 class="section-title">AI SOLUTIONS FOR REAL BUSINESS NEEDS</h2>
+      </div>
+
+      <!-- 2-Column Staggered Grid of Services / Capabilities -->
+      <div class="projects-grid">
+
+        <!-- Card 1: AI Voice Agents (Left Column, Top) -->
+        <article class="project-card card-left">
+          <div class="mockup-frame monitor-frame">
+            <div class="device-glow"></div>
+            <!-- Custom UI Graphic for AI Voice Agents -->
+            <div class="mockup-screen lawyer-alexander-screen ai-voice-screen">
+              <div class="screen-watermark">Voice</div>
+              <div class="screen-card">
+                <div class="screen-header">
+                  <span class="screen-user"><span class="pulsing-live-dot"></span>Active Voice Node</span>
+                  <span class="screen-badge">Ultra-Low Latency</span>
+                </div>
+                <div class="ai-voice-hero">
+                  <div class="ai-voice-pulse-wrap">
+                    <div class="ai-voice-pulse-ring"></div>
+                    <div class="ai-voice-mic-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                        <line x1="12" y1="19" x2="12" y2="22"></line>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="ai-voice-wave-bars">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="monitor-stand"></div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-name">AI Voice Agents</h3>
+            <p class="project-desc">Intelligent voice agents that handle calls, answer customer questions, and book appointments automatically.</p>
+            <div class="project-badge-wrap">
+              <span class="project-badge"><span class="pulsing-live-dot badge-dot"></span>AI Voice Agents</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Business Automation (Right Column, Staggered) -->
+        <article class="project-card card-right card-stagger-1">
+          <div class="mockup-frame mobile-frame-wrapper">
+            <div class="screen-watermark-mobile">Flow</div>
+            <div class="mobile-phone-holder">
+              <div class="phone-case">
+                <div class="phone-notch"></div>
+                <div class="phone-screen ai-flow-screen">
+                  <div class="ai-flow-ui">
+                    <div class="ai-flow-badge"><span class="pulsing-live-dot"></span>Workflow Active</div>
+                    <div class="ai-flow-nodes">
+                      <div class="flow-node node-trigger">Webhook / Lead</div>
+                      <div class="flow-line"></div>
+                      <div class="flow-node node-ai">AI Analysis & Parse</div>
+                      <div class="flow-line"></div>
+                      <div class="flow-node node-action">CRM & Instant Sync</div>
+                    </div>
+                    <div class="flow-status-pill">100% Automated</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-name">Business Automation</h3>
+            <p class="project-desc">Streamline repetitive business tasks with intelligent workflows and connected systems.</p>
+            <div class="project-badge-wrap">
+              <span class="project-badge"><span class="pulsing-live-dot badge-dot"></span>Automation</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: AI Appointment Assistants (Left Column, Bottom) -->
+        <article class="project-card card-left">
+          <div class="mockup-frame laptop-frame-wrapper">
+            <div class="laptop-bezel">
+              <div class="laptop-camera"></div>
+              <div class="laptop-screen hebrew-screen ai-calendar-screen">
+                <div class="hebrew-header ai-cal-header">
+                  <div class="hebrew-dots"><span></span><span></span><span></span></div>
+                  <div class="ai-cal-title"><span class="pulsing-live-dot"></span>Smart Calendar Engine</div>
+                </div>
+                <div class="ai-cal-content">
+                  <div class="ai-cal-booking-box">
+                    <div class="booking-badge">Instant Booking Confirmed</div>
+                    <div class="booking-time-slot">Tomorrow at 10:30 AM</div>
+                    <div class="booking-sync-text">Synced with Google Calendar & CRM</div>
+                  </div>
+                  <div class="ai-cal-slots-preview">
+                    <span class="slot active">09:00 AM</span>
+                    <span class="slot booked">10:30 AM</span>
+                    <span class="slot active">02:00 PM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="laptop-base"></div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-name">AI Appointment Assistants</h3>
+            <p class="project-desc">AI assistants that handle customer inquiries and manage appointment scheduling.</p>
+            <div class="project-badge-wrap">
+              <span class="project-badge"><span class="pulsing-live-dot badge-dot"></span>AI Assistants</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: AI Customer Support (Right Column, Bottom Staggered) -->
+        <article class="project-card card-right card-stagger-2">
+          <div class="mockup-frame tablet-frame-wrapper">
+            <div class="screen-watermark-tablet">Support</div>
+            <div class="tablet-bezel">
+              <div class="tablet-screen robert-screen ai-support-screen">
+                <div class="robert-nav ai-chat-nav">
+                  <span class="robert-logo">Support Assistant</span>
+                  <span class="robert-cta"><span class="pulsing-live-dot"></span>Online 24/7</span>
+                </div>
+                <div class="ai-chat-thread">
+                  <div class="chat-bubble user-msg">How soon can I schedule an onboarding call?</div>
+                  <div class="chat-bubble bot-msg">Right now! I have open slots available today at 3:00 PM and 4:30 PM. Would you like me to book one for you?</div>
+                </div>
+                <div class="ai-support-footer">
+                  <div class="support-feature"><span>⚡ Instant Response</span></div>
+                  <div class="support-feature"><span>🌐 Omnichannel</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-name">AI Customer Support</h3>
+            <p class="project-desc">Provide businesses with intelligent, always-available customer support.</p>
+            <div class="project-badge-wrap">
+              <span class="project-badge"><span class="pulsing-live-dot badge-dot"></span>AI Solutions</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Services / Attention to Detail Section -->
+    <section class="quote-section" id="services">
+      <div class="quote-container">
+        <div class="section-tag" style="justify-content: center; margin-bottom: 1.5rem;">
+          <span class="dot-orange"></span>
+          <span>OUR AI SERVICES</span>
+        </div>
+        <h2 class="quote-text">Intelligent AI solutions that help your business work smarter</h2>
+        <p class="quote-desc">From AI voice agents to business automation, we build smarter systems that save time and simplify operations.</p>
+        <div class="quote-cta">
+          <a href="#projects" class="btn btn-primary btn-large">
+            <span>Explore our services</span>
+            <span class="btn-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Work With Me & Working Process Section -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="testimonials-header">
+        <div class="section-tag">
+          <span class="dot-orange"></span>
+          <span>WHY ME</span>
+        </div>
+        <h2 class="section-title">WHY WORK WITH ME</h2>
+      </div>
+
+      <!-- Why Work With Me 3 Cards -->
+      <div class="testimonials-grid">
+        <!-- Card 1: Built Around Your Business -->
+        <div class="glass-card testimonial-card">
+          <div class="testimonial-top">
+            <div class="client-meta">
+              <div class="card-icon-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="client-name">Built Around Your Business</h4>
+                <span class="client-role">Tailored Architecture</span>
+              </div>
+            </div>
+            <span class="metric-pill">Custom Fit</span>
+          </div>
+          <p class="testimonial-body">
+            Every business has unique workflows. I design custom AI agents and automation systems specifically fitted to your exact processes, tools, and objectives rather than generic cookie-cutter templates.
+          </p>
+        </div>
+
+        <!-- Card 2: Smart AI Solutions (Featured Glow Card) -->
+        <div class="glass-card testimonial-card card-featured">
+          <div class="testimonial-top">
+            <div class="client-meta">
+              <div class="card-icon-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                  <line x1="12" y1="19" x2="12" y2="22"></line>
+                </svg>
+              </div>
+              <div>
+                <h4 class="client-name">Smart AI Solutions</h4>
+                <span class="client-role">Modern Tech Stack</span>
+              </div>
+            </div>
+            <span class="metric-pill metric-fire">High Performance</span>
+          </div>
+          <p class="testimonial-body">
+            Leveraging cutting-edge models and platforms like ElevenLabs, n8n, OpenAI, and Make.com to deliver intelligent, ultra-responsive voice agents and reliable automation that streamline everyday operations.
+          </p>
+        </div>
+
+        <!-- Card 3: Direct Communication -->
+        <div class="glass-card testimonial-card">
+          <div class="testimonial-top">
+            <div class="client-meta">
+              <div class="card-icon-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="client-name">Direct Communication</h4>
+                <span class="client-role">Zero Bureaucracy</span>
+              </div>
+            </div>
+            <span class="metric-pill">Fast Updates</span>
+          </div>
+          <p class="testimonial-body">
+            Work directly with the engineer building your systems. No middlemen, no agency account managers, and no communication delays—just transparent, fast, and continuous collaboration from day one.
+          </p>
+        </div>
+      </div>
+
+      <!-- Working Process Section -->
+      <div class="process-wrapper">
+        <div class="testimonials-header" style="margin-top: 5rem; margin-bottom: 2.5rem;">
+          <div class="section-tag">
+            <span class="dot-orange"></span>
+            <span>HOW IT WORKS</span>
+          </div>
+          <h2 class="section-title">MY WORKING PROCESS</h2>
+        </div>
+
+        <div class="testimonials-grid process-grid">
+          <!-- Step 1: Understand -->
+          <div class="glass-card testimonial-card process-step-card">
+            <div class="process-step-header">
+              <span class="step-num">01</span>
+              <span class="step-badge">Phase 1</span>
+            </div>
+            <h3 class="process-step-title">Understand</h3>
+            <p class="testimonial-body">
+              We analyze your current business workflows, bottlenecks, and manual overhead to pinpoint where AI voice agents and smart automation create the highest return on time and revenue.
+            </p>
+          </div>
+
+          <!-- Step 2: Build (Featured Glow Card) -->
+          <div class="glass-card testimonial-card card-featured process-step-card">
+            <div class="process-step-header">
+              <span class="step-num">02</span>
+              <span class="step-badge">Phase 2</span>
+            </div>
+            <h3 class="process-step-title">Build</h3>
+            <p class="testimonial-body">
+              Engineering the solution: configuring voice models, setting up secure webhook integrations, connected automation pipelines, and integrating directly into your CRM and scheduling tools.
+            </p>
+          </div>
+
+          <!-- Step 3: Test and Deliver -->
+          <div class="glass-card testimonial-card process-step-card">
+            <div class="process-step-header">
+              <span class="step-num">03</span>
+              <span class="step-badge">Phase 3</span>
+            </div>
+            <h3 class="process-step-title">Test and Deliver</h3>
+            <p class="testimonial-body">
+              Rigorous real-world testing of voice conversations, edge cases, and data handoffs before deploying seamlessly into production with zero downtime for your active operations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Crazy Aesthetic Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <!-- Contact Left Column -->
+        <div class="contact-info-col">
+          <div class="section-tag">
+            <span class="dot-orange"></span>
+            <span>Let's Connect</span>
+          </div>
+          <h2 class="contact-title">Stop Doing manual work<br><span class="highlight-orange">let's engineer the future</span></h2>
+          <p class="contact-subtitle">
+            From custom AI voice agents and n8n automations to sleek, high-speed web applications, I turn complex business bottlenecks into seamless digital reality.
+          </p>
+
+          <div class="contact-cards-stack">
+            <div class="contact-card-item">
+              <span class="contact-item-label">Direct Email</span>
+              <a href="mailto:business.ahmiibots@gmail.com" class="contact-item-value">business.ahmiibots@gmail.com</a>
+            </div>
+            <div class="contact-card-item">
+              <span class="contact-item-label">WhatsApp / Phone</span>
+              <a href="tel:+923412770755" class="contact-item-value">+92 341 2770755</a>
+            </div>
+            <div class="contact-card-item">
+              <span class="contact-item-label">Availability Status</span>
+              <span class="contact-item-value status-available">● Available now</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Right Column Form -->
+        <div class="contact-form-col">
+          <div class="glass-card contact-form-card">
+            <form class="contact-form"
+              onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent to Muhammad Ahmad.');">
+              <div class="form-group">
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" placeholder="Elon Musk" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email">Your Email</label>
+                <input type="email" id="contact-email" placeholder="name@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-project-type">Project Type</label>
+                <input type="text" id="contact-project-type" placeholder="e.g. AI Voice Agent, Business Automation" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Project Details</label>
+                <textarea id="contact-message" rows="4"
+                  placeholder="Tell me about your project goals, timeline, and scope..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-submit">
+                <span>Send Proposal Request</span>
+                <span class="btn-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+      <div class="footer-content">
+        <div class="footer-logo">AHMII BOTS</div>
+        <p class="footer-tagline">Automating workflows with intelligent AI agents.</p>
+        <div class="footer-links">
+          <a href="mailto:business.ahmiibots@gmail.com">business.ahmiibots@gmail.com</a>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2026 MUHAMMAD AHMAD. All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Crazy Aesthetic Custom Cursor & FX Canvas -->
+  <div class="custom-cursor-dot" id="cursor-dot"></div>
+  <div class="custom-cursor-ring" id="cursor-ring"></div>
+  <canvas id="cursor-canvas"></canvas>
+
+  <!-- Scripts -->
+  <script src="frames.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
